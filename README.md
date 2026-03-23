@@ -10,4 +10,6 @@ Respecto al uso de IA:
   
 - Task "Afegir el component" -> Se ha utilizado IA principalmente en la parte de HTML y CSS. El nuevo guard (roleguard) y app.routes.ts se han hecho a base del código del seminario.
 
+Ante cualquier duda sobre el código, recomiendo mirar el vídeo.
+
 
