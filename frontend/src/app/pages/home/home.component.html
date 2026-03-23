@@ -1,0 +1,44 @@
+<div>
+  <h2>Inicio</h2>
+  <p>Has iniciado sesión correctamente</p>
+  <p><strong>Rol actual:</strong> {{ role || 'sin rol' }}</p>
+
+  <div *ngIf="isAdmin" style="margin: 16px 0;">
+    <button class="btn" routerLink="/admin-resource">
+      Ir al recurso solo Admin
+    </button>
+  </div>
+
+  <div style="margin: 20px 0;">
+    <h3>Tu Token JWT</h3>
+    <code style="display:block; padding:10px; background:#eee; word-break:break-all;">
+      {{ tokenPreview }}
+    </code>
+  </div>
+
+  <div style="margin: 20px 0;">
+    <h3>Prueba de Token: Lista de Usuarios</h3>
+    <button class="btn" (click)="cargarUsuarios()" [disabled]="loadingUsuarios" style="margin-right: 10px;">
+      <span *ngIf="loadingUsuarios">Cargando...</span>
+      <span *ngIf="!loadingUsuarios">Cargar Lista de Usuarios</span>
+    </button>
+    <button class="btn" (click)="refreshToken()">
+      Refrescar Token
+    </button>
+
+    <div *ngIf="errorUsuarios" class="alert" style="margin-top: 10px;">
+      {{ errorUsuarios }}
+    </div>
+
+    <ul *ngIf="usuarios.length > 0" class="list" style="margin-top: 15px;">
+      <li *ngFor="let u of usuarios" class="card" style="flex-direction: row; justify-content: start; gap:10px;">
+        <span class="name">{{ u.name }}</span>
+        <span class="muted">{{ u.email }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <button class="btn" (click)="logout()">
+    Cerrar Sesión
+  </button>
+</div>

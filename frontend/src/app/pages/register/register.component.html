@@ -1,0 +1,52 @@
+<div class="card">
+  <h2>Crear Cuenta</h2>
+
+  <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="payload.name"
+      required
+      placeholder="Nombre"
+    />
+
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="payload.email"
+      required
+      placeholder="Email"
+    />
+
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="payload.password"
+      required
+      minlength="6"
+      placeholder="Contraseña (mínimo 6 caracteres)"
+    />
+
+    <input
+      type="text"
+      name="organizacion"
+      [(ngModel)]="payload.organizacion"
+      required
+      pattern="^[0-9a-fA-F]{24}$"
+      placeholder="ID de Organización (ObjectId)"
+    />
+
+    <div *ngIf="errorMessage" class="alert">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" class="btn" [disabled]="loading || registerForm.invalid">
+      <span *ngIf="loading">Registrando...</span>
+      <span *ngIf="!loading">Registrarse</span>
+    </button>
+  </form>
+
+  <p class="muted" style="margin-top: 15px;">
+    ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a>
+  </p>
+</div>

@@ -1,0 +1,11 @@
+
+> express-api-mongo-indepth@1.0.0 start
+> node build/server.js
+
+(node:38675) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[14/3/2026, 18:50:27] [INFO] Mongo connected successfully.
+[14/3/2026, 18:50:27] [INFO] Server is running on port 1337
+[14/3/2026, 18:50:28] [INFO] Incomming - METHOD: [POST] - URL: [/usuarios] - IP: [::1]
+[14/3/2026, 18:50:28] [INFO] Result - METHOD: [POST] - URL: [/] - IP: [::1] - STATUS: [201]
+Killed
