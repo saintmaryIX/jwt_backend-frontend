@@ -12,4 +12,7 @@ Respecto al uso de IA:
 
 Ante cualquier duda sobre el código, recomiendo mirar el vídeo.
 
+IA utilizada
+- ChatGPT 5.4 Thinking
+
 
